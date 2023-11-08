@@ -1,5 +1,5 @@
-# OSLab
-operating systems lab for KSU fall semester 2023
+# OSLab PLEASE READ THIS
+operating systems lab for KSU fall semester 2023, i actually got this working in the end. allthough for some reason you have to hit controll C to exit after it is done producing 98 numbers
 
 these files are c++
 
