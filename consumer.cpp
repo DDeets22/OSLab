@@ -11,7 +11,7 @@ std::string line;
 
 int state = 0;
 int i = 0;
-while(i < 99){
+while(i <= 99){
 std::cout << "im the consumer, i = " << i << std::endl;
     switch(state){
 	case 0: //waiting
@@ -23,13 +23,12 @@ std::cout << "im the consumer, i = " << i << std::endl;
 	break;
 	case 1: //consuming
 	myFile.open("table.txt");
-	if(myFile.peek() == std::ifstream::traits_type::eof()){
-        state = 0;
-        }
 	while(getline(myFile, line)){
-	    std::cout << line << std::endl;
+	    std::cout << "line: " << line << std::endl;
 	    i++;
 	}
+	std::ofstream f("table.txt");//this should over write the file
+	f.close();
 	myFile.close();
 	state = 0;
 	break;

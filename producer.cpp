@@ -7,18 +7,15 @@
 
 
 
-
-
 int main(){
 //overwrite any existing data or create new
-
+int sem = 0;
 int state=1;
 int i = 0;
-int sem = 0;
 std::fstream myFile;
 
 
-while(i < 99){
+while(i <= 99){
 std::cout << "im the producer, i = " << i << std::endl;
     switch(state){
         case 0://waiting
@@ -39,15 +36,13 @@ std::cout << "im the producer, i = " << i << std::endl;
                 i++;
                 sem++;
                 }
-    		state = 0;//after sem = 2 set state to 0
-		myFile.close();//write the file
     	    }
+	state = 0;
+	myFile.close();
 	break;
     }
 }
-
-
 myFile.close();
 return 0;
-
 }
+
